@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #wrap{
+            width: 200px;
+            height: 200px;
+            background-color: red;
+            border-radius: 15%;
+        }
+        
+    </style>
+</head>
+<body>
+    <center><div id="wrap"  onclick="changeColor()" >点击我就可以变换颜色</div></center>
+</body>
+<script>
+    var wrap = document.getElementById("wrap");
+    var count = 1;
+    function changeColor(){
+        if(count==1){
+            wrap.style.backgroundColor="green";
+            wrap.innerHTML="我变绿了"
+            count=2;
+        }else{
+            wrap.style.backgroundColor="red";
+            wrap.innerHTML="我变红了"
+            count=1;
+        }
+    }
+</script>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box {
+            width: 100%;
+            z-index: 99;
+            height: 100%;
+            position: relative;
+            background-color: rgba(0, 0, 0, 0.5);
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrap">
+        <button class="play">播放</button>
+        <div class="box" style="display: none;">
+            <video width="320" height="400px" controls id="video">
+                <source src="./image/djs.mp4" type="video/mp4">
+            </video>
+            <img src="" alt="">
+
+            <button class="btn1">关闭</button>
+        </div>
+
+    </div>
+</body>
+<script src="./js/jq.js"></script>
+<script>
+    var x = document.getElementById("video");
+    $(".play").on("click", function () {
+        $(".box").show();
+        x.play();
+        $(".play").hide();
+    })
+    $(".video").on("ended", function () {
+        $(".box").hide();
+
+    })
+    $(".btn1").on("click", function () {
+        $(".box").hide();
+        x.pause();
+        $(".play").show();
+    })
+</script>
+
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #wrap{
+            width: 300px;
+            height: 300px;
+            background-color: pink;
+            margin: 0 auto;
+        }
+    </style>
+</head>
+<body>
+    <div id="wrap">
+
+    </div>
+</body>
+<script>
+    function formatDate(date){
+        var date = new Date(date);
+        var year = date.getFullYear(date);
+        var month=date.getMonth(date)+1;
+        var day = date.getDate(date)-9;
+        var hours = date.getHours(date);
+        var min = date.getMinutes(date);
+        var second = date.getSeconds(date)
+        if(month<10){
+            month="0"+month;
+        }
+        if(day<10){
+            day="0"+day;
+        }
+        if(hours<10){
+            hours="0"+hours;
+        }
+        if(min<10){
+            min = "0"+min
+        }
+        if(second<10){
+            second = "0"+second
+        }
+        return year+"-"+month+"-"+day+" "+hours+":"+min+":"+second;
+    }
+    var now = new Date();
+    var timer1 = formatDate(1631517478765);
+    var timer2 = formatDate(now);
+    var wrap = document.getElementById("wrap");
+    console.log(timer1+" "+timer2);
+    wrap.innerHTML = timer1+"<br>"+timer2
+</script>
+</html>
